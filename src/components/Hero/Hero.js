@@ -30,7 +30,7 @@ export const Hero = ({ title }) => (
       <Box mt="1rem">
         <Stack isInline spacing={4}>
           <IconButton
-            aria-label="Go to Jordans GitHub"
+            aria-label="GitHub"
             variant="link"
             icon={FaGithub}
             fontSize="32px"
@@ -40,7 +40,7 @@ export const Hero = ({ title }) => (
             }}
           />
           <IconButton
-            aria-label="Connect to Jordan on LinkedIn"
+            aria-label="LinkedIn"
             variant="link"
             icon={FaLinkedin}
             fontSize="32px"
@@ -51,7 +51,7 @@ export const Hero = ({ title }) => (
             }}
           />
           <IconButton
-            aria-label="Follow Jordan on Twitter"
+            aria-label="Twitter"
             icon={FaTwitterSquare}
             variant="link"
             fontSize="32px"
@@ -61,7 +61,7 @@ export const Hero = ({ title }) => (
             }}
           />
           <IconButton
-            aria-label="Email Jordan"
+            aria-label="Email"
             onClick={() => {
               window.location.href = "mailto:jordan@jordanholt.dev";
             }}
