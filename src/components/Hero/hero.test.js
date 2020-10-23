@@ -1,11 +1,23 @@
 import React from "react";
-import { render } from "../../../testUtils/testUtils";
+import { render, screen } from "../../../testUtils/testUtils";
 import { Hero } from "./Hero";
 
-test("hero renders github, email, twitter, linkedin and email", () => {
-  const { getByLabelText, debug } = render(<Hero />);
-  expect(getByLabelText(/GitHub/i)).toBeTruthy();
-  expect(getByLabelText(/Twitter/i)).toBeTruthy();
-  expect(getByLabelText(/linkedin/i)).toBeTruthy();
-  expect(getByLabelText(/email/i)).toBeTruthy();
+test("should have a heading", () => {
+  render(<Hero />);
+
+  expect(screen.getByRole("heading")).toBeInTheDocument();
+});
+
+test("hero renders github, email, twitter, linkedin and email labels", () => {
+  const { getByLabelText } = render(<Hero />);
+  expect(getByLabelText(/GitHub/i)).toBeInTheDocument();
+  expect(getByLabelText(/Twitter/i)).toBeInTheDocument();
+  expect(getByLabelText(/linkedin/i)).toBeInTheDocument();
+  expect(getByLabelText(/email/i)).toBeInTheDocument();
+});
+
+test("image should have correct alt text", () => {
+  const { getByAltText } = render(<Hero />);
+
+  expect(getByAltText(/jordan holt/i)).toBeInTheDocument();
 });
