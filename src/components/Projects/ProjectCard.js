@@ -21,7 +21,7 @@ export const ProjectCard = ({
 }) => {
   const { colorMode } = useColorMode();
 
-  const bgColor = { light: "blue.50", dark: "gray.700" };
+  const bgColor = { light: "gray.50", dark: "gray.800" };
 
   const color = { light: "black", dark: "white" };
   return (
@@ -45,7 +45,7 @@ export const ProjectCard = ({
           size="100px"
         />
       </Box>
-      <Box fontSize="xl" textTransform="capitalize">
+      <Box fontSize="xl" textTransform="capitalize" fontWeight="bolder">
         {name}
       </Box>
       <Box py={2} fontSize="md">
@@ -66,12 +66,12 @@ export const ProjectCard = ({
             mx={2}
             role="link"
           >
-            <Button width="100%" variantColor="blue" variant="outline">
+            <Button width="100%" variantColor="teal" variant="outline">
               View Live
             </Button>
           </ChakraLink>
           <ChakraLink isExternal href={gitLink} flexGrow={3} mx={2}>
-            <Button width="100%" variantColor="blue" variant="solid">
+            <Button width="100%" variantColor="teal" variant="solid">
               GitHub
             </Button>
           </ChakraLink>

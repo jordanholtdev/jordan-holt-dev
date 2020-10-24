@@ -9,7 +9,5 @@ describe("contact form component", () => {
     expect(getByLabelText(/your name/i)).toBeRequired();
     expect(getByLabelText(/your message/i)).toBeVisible();
     expect(getByText(/submit/i)).toBeVisible();
-
-    debug();
   });
 });

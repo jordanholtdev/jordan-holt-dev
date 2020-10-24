@@ -14,11 +14,13 @@
     "@emotion/styled": "^10.0.27",
     "@formspree/react": "^2.2.2",
     "emotion-theming": "^10.0.27",
+    "formik": "^2.2.1",
     "isomorphic-fetch": "^3.0.0",
     "next": "^9.1.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "yup": "^0.29.3"
   },
   "license": "MIT",
   "devDependencies": {

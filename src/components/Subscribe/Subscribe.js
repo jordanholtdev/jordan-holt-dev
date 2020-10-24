@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import { Field, Formik } from "formik";
+import * as Yup from "yup";
 
 import {
   Box,
@@ -9,53 +10,21 @@ import {
   InputGroup,
   InputLeftElement,
   Heading,
+  FormErrorMessage,
   Icon,
   useColorMode,
   useToast,
 } from "@chakra-ui/core";
 
+const validateEmailSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+});
+
 export const Subscribe = () => {
-  const inputEl = useRef(null);
   const { colorMode } = useColorMode();
   const bgColor = { light: "blue.100", dark: "gray.700" };
   const borderColor = { light: "blue.500", dark: "blue.100" };
   const toast = useToast();
-
-  const onFormSubmit = async (e) => {
-    e.preventDefault();
-
-    const res = await fetch("api/subscribe", {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-
-    if (error) {
-      toast({
-        title: "An error occurred.",
-        description: error,
-        status: "error",
-        duration: 4000,
-        isClosable: true,
-      });
-      return;
-    }
-
-    inputEl.current.value = "";
-    toast({
-      title: "Success!.",
-      description: "Thank you! 🎉 You are now subscribed",
-      status: "success",
-      duration: 4000,
-      isClosable: true,
-    });
-  };
 
   return (
     <Box
@@ -70,34 +39,81 @@ export const Subscribe = () => {
       <Heading as="h4" fontSize="2xl">
         Join the newsletter
       </Heading>
-      <FormControl>
-        <FormLabel py={2} htmlFor="email">
-          Email
-        </FormLabel>
-        <InputGroup>
-          <InputLeftElement>
-            <Icon name="email" color="gray.300" />
-          </InputLeftElement>
-          <Input
-            focusBorderColor="lime"
-            type="email"
-            variant="outline"
-            id="email"
-            ref={inputEl}
-            aria-label="your email"
-            aria-describedby="email-helper-text"
-            placeholder="jane@acme.com"
-          />
-        </InputGroup>
-      </FormControl>
-      <Button
-        mt={4}
-        variantColor="blue"
-        variant="outline"
-        onClick={onFormSubmit}
+      <Formik
+        initialValues={{ email: "" }}
+        validationSchema={validateEmailSchema}
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          const res = await fetch("api/subscribe", {
+            body: JSON.stringify(values),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+          });
+
+          const { error } = await res.json();
+
+          if (error) {
+            setSubmitting(false);
+            toast({
+              title: "An error occurred.",
+              description: error,
+              status: "error",
+              duration: 4000,
+              isClosable: true,
+            });
+            return;
+          }
+          resetForm();
+          toast({
+            title: "Success!.",
+            description: "Thank you! 🎉 You are now subscribed",
+            status: "success",
+            duration: 4000,
+            isClosable: true,
+          });
+        }}
       >
-        Subscribe
-      </Button>
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <Field name="email">
+              {({ field, form }) => (
+                <FormControl
+                  isInvalid={form.errors.email && form.touched.email}
+                >
+                  <FormLabel py={2} htmlFor="email" id="email">
+                    Email
+                  </FormLabel>
+                  <InputGroup>
+                    <InputLeftElement>
+                      <Icon name="email" color="gray.300" />
+                    </InputLeftElement>
+                    <Input
+                      {...field}
+                      focusBorderColor="teal.200"
+                      type="email"
+                      variant="outline"
+                      id="email"
+                      aria-label="your email"
+                      placeholder="jane@acme.com"
+                    />
+                  </InputGroup>
+                  <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <Button
+              mt={4}
+              variantColor="blue"
+              variant="outline"
+              type="submit"
+              isLoading={formik.isSubmitting}
+            >
+              Subscribe
+            </Button>
+          </form>
+        )}
+      </Formik>
     </Box>
   );
 };

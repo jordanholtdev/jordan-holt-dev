@@ -6,6 +6,7 @@ import {
   Stack,
   Flex,
   useColorMode,
+  Heading,
 } from "@chakra-ui/core";
 
 export const TechSection = () => {
@@ -47,7 +48,16 @@ export const TechSection = () => {
           boxShadow={dropShadow[colorMode]}
         />
       </Stack>
-      <Flex textAlign="left" alignItems="center" ml={[0, -4, -8, -16]}>
+      <Flex
+        flexDirection="column"
+        textAlign="left"
+        justifyContent="center"
+        alignItems="center"
+        ml={[0, -4, -8, -16]}
+      >
+        <Heading as="h4" textAlign="left" w="100%" size="xl" mb={2}>
+          Technology
+        </Heading>
         <Text fontSize="lg">
           The past decade has seen my frontend development stack evolve from
           utilising basic HTML, CSS and sprinkles of Javascript to leveraging
