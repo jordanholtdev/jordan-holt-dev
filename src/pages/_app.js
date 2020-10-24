@@ -1,4 +1,5 @@
 import { ThemeProvider, CSSReset, ColorModeProvider } from "@chakra-ui/core";
+import { FormspreeProvider } from "@formspree/react";
 
 import theme from "../theme";
 
@@ -7,7 +8,9 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <ColorModeProvider value="dark">
         <CSSReset />
-        <Component {...pageProps} />
+        <FormspreeProvider project="1531282609055727227">
+          <Component {...pageProps} />
+        </FormspreeProvider>
       </ColorModeProvider>
     </ThemeProvider>
   );

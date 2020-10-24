@@ -1,0 +1,26 @@
+{
+  "forms": {
+    "signupForm": {
+      "name": "Contact Form",
+      "fields": {
+        "name": {
+          "type": "text",
+          "prettyName": "User name",
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "prettyName": "Email address",
+          "required": true
+        },
+        "message": {
+          "type": "text",
+          "prettyName": "User message",
+          "required": true
+        }
+      },
+      "actions": [{ "type": "email", "to": "jordan@jordanholt.dev" }],
+      "allowExtraFields": false
+    }
+  }
+}
