@@ -1,5 +1,4 @@
 import {
-  Box,
   Text,
   Image,
   SimpleGrid,
@@ -7,6 +6,7 @@ import {
   Flex,
   useColorMode,
   Heading,
+  PseudoBox,
 } from "@chakra-ui/core";
 
 export const TechSection = () => {
@@ -17,36 +17,67 @@ export const TechSection = () => {
     dark: `-16px 16px 32px #14151e, 
     16px -16px 32px #1a1d28`,
   };
+  const dropShadowHover = {
+    light: `  2px 2px 4px #cfcfcf, 
+    -2px -2px 4px #ffffff`,
+    dark: `3px 3px 10px #13141c, 
+    -3px -3px 10px #1b1e2a`,
+  };
 
   return (
     <SimpleGrid columns={[1, 2]} spacing={10} py={32}>
       <Stack justifyContent="center" height="100%" w="100%" alignItems="center">
-        <Image
+        <PseudoBox
+          _hover={{
+            boxShadow: dropShadowHover[colorMode],
+          }}
           rounded="full"
-          objectFit="cover"
-          src="/static/images/react-logo.png"
-          size="100px"
-          alt="Segun Adebayo"
+          p={2}
           boxShadow={dropShadow[colorMode]}
-        />
-        <Image
+        >
+          <Image
+            rounded="full"
+            objectFit="cover"
+            src="/static/images/react-logo.png"
+            size="100px"
+            alt="Segun Adebayo"
+            // boxShadow={dropShadow[colorMode]}
+          />
+        </PseudoBox>
+        <PseudoBox
+          _hover={{
+            boxShadow: dropShadowHover[colorMode],
+          }}
           position="relative"
           left="-75px"
           rounded="full"
-          objectFit="contain"
-          src="/static/images/node-logo.png"
-          size="100px"
-          alt="Segun Adebayo"
+          p={2}
           boxShadow={dropShadow[colorMode]}
-        />
-        <Image
+        >
+          <Image
+            rounded="full"
+            objectFit="contain"
+            src="/static/images/node-logo.png"
+            size="100px"
+            alt="Segun Adebayo"
+          />
+        </PseudoBox>
+        <PseudoBox
+          _hover={{
+            boxShadow: dropShadowHover[colorMode],
+          }}
           rounded="full"
-          objectFit="cover"
-          src="/static/images/react-logo.png"
-          size="100px"
-          alt="Segun Adebayo"
+          p={2}
           boxShadow={dropShadow[colorMode]}
-        />
+        >
+          <Image
+            rounded="full"
+            objectFit="cover"
+            src="/static/images/react-logo.png"
+            size="100px"
+            alt="Segun Adebayo"
+          />
+        </PseudoBox>
       </Stack>
       <Flex
         flexDirection="column"
@@ -55,7 +86,7 @@ export const TechSection = () => {
         alignItems="center"
         ml={[0, -4, -8, -16]}
       >
-        <Heading as="h4" textAlign="left" w="100%" size="xl" mb={2}>
+        <Heading as="h3" textAlign="left" w="100%" size="xl" mb={2}>
           Technology
         </Heading>
         <Text fontSize="lg">

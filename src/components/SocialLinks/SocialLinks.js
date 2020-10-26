@@ -15,7 +15,8 @@ export const SocialLinks = () => {
           variant="link"
           icon={FaGithub}
           fontSize="32px"
-          variantColor="teal"
+          variantColor="gray"
+          _hover={{ color: "#68d391" }}
           onClick={() => {
             window.location.href = "https://github.com/jordanholtdev";
           }}
@@ -25,7 +26,8 @@ export const SocialLinks = () => {
           variant="link"
           icon={FaLinkedin}
           fontSize="32px"
-          variantColor="teal"
+          variantColor="gray"
+          _hover={{ color: "#63b3ed" }}
           onClick={() => {
             window.location.href =
               "https://www.linkedin.com/in/jordan-holt-toronto/";
@@ -36,7 +38,8 @@ export const SocialLinks = () => {
           icon={FaTwitterSquare}
           variant="link"
           fontSize="32px"
-          variantColor="teal"
+          variantColor="gray"
+          _hover={{ color: "#63b3ed" }}
           onClick={() => {
             window.location.href = "https://twitter.com/jordanholtdev";
           }}
@@ -49,7 +52,8 @@ export const SocialLinks = () => {
           variant="link"
           icon={FaEnvelope}
           fontSize="32px"
-          variantColor="teal"
+          variantColor="gray"
+          _hover={{ color: "#b794f4" }}
         />
       </Stack>
     </Box>

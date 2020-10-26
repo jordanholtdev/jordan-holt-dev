@@ -31,9 +31,9 @@ function MenuDrawer() {
         ref={btnRef}
         variant="ghost"
         aria-label="open menu"
-        variantColor="teal"
+        variantColor="gray"
         onClick={onOpen}
-        size="sm"
+        size="lg"
       >
         Menu
       </Button>
@@ -128,13 +128,12 @@ export const Nav = () => {
     >
       <NextLink href="/">
         <ChakraLink>
-          <Text fontSize="lg">
+          <Text fontSize="xl">
             <Text
               as="span"
-              fontSize="lg"
+              fontSize="xl"
               fontWeight="bolder"
               letterSpacing="wide"
-              color="teal.500"
             >
               Jordan{" "}
             </Text>
@@ -155,8 +154,8 @@ export const Nav = () => {
             aria-label="contact"
             variant="ghost"
             as="a"
-            variantColor="teal"
-            size="sm"
+            variantColor="gray"
+            size="lg"
           >
             Contact
           </Button>

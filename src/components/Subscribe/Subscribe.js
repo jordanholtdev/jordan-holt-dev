@@ -22,8 +22,8 @@ const validateEmailSchema = Yup.object().shape({
 
 export const Subscribe = () => {
   const { colorMode } = useColorMode();
-  const bgColor = { light: "blue.100", dark: "gray.700" };
-  const borderColor = { light: "blue.500", dark: "blue.100" };
+  const bgColor = { light: "white", dark: "gray.700" };
+  const borderColor = { light: "gray.400", dark: "blue.100" };
   const toast = useToast();
 
   return (
@@ -104,8 +104,8 @@ export const Subscribe = () => {
             </Field>
             <Button
               mt={4}
-              variantColor="blue"
-              variant="outline"
+              variantColor="green"
+              variant="solid"
               type="submit"
               isLoading={formik.isSubmitting}
             >

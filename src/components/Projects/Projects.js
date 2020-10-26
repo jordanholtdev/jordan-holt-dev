@@ -7,18 +7,20 @@ export const Projects = () => {
       <Heading pb={10} as="h2" size="xl">
         Projects
       </Heading>
-      <SimpleGrid columns={[1, 2]} spacing={10}>
+      <SimpleGrid columns={[1]} spacing={10}>
         <ProjectCard
           imageUrl={"/static/images/blog-image.jpg"}
           name={"My Blog"}
-          description={"Learning to code, technology and freelancing"}
+          description={
+            "My personal blog. I write about learning to code, technology and freelancing."
+          }
           liveLink={"https://blog.jordanholt.dev/"}
           gitLink={"https://github.com/jordanholtdev/jordan-holt-blog"}
         />
         <ProjectCard
           imageUrl={"/static/images/crypto-image.jpg"}
           name={"Crypto Exchanges"}
-          description={"Up-to-date crypto exchange information"}
+          description={"Search crypto exchange information"}
           liveLink={"https://musing-aryabhata-7e5303.netlify.app/"}
           gitLink={"https://github.com/jordanholtdev/crypto-exchanges"}
         />

@@ -21,7 +21,7 @@ export const Hero = ({ title }) => (
               alt="Jordan Holt"
             />
           </Box>
-          <Heading as="h1" fontSize="6xl">
+          <Heading as="h1" fontSize="6xl" pb={2}>
             {title}
           </Heading>
           <Text maxWidth="800px" letterSpacing="wide" fontSize="lg">

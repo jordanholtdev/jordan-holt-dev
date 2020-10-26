@@ -31,6 +31,8 @@ export const ContactForm = () => {
       initialValues={{ name: "", email: "", message: "" }}
       validationSchema={validationSchema}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
+        const FORM_ID = process.env.FORMSPREE_FORM_ID;
+
         const res = await fetch(
           "https://formspree.io/p/1531282609055727227/f/signupForm",
           {
