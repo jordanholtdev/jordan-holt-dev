@@ -3,6 +3,8 @@ import { Main } from "../components/Main";
 import { Footer } from "../components/Footer/Footer";
 import { Nav } from "../components/Nav/Nav";
 import { NextSeo } from "next-seo";
+import { VideoLinkCard } from "../components/VideoLinkCard";
+import { Subscribe } from "../components/Subscribe/Subscribe";
 
 import {
   Link as ChakraLink,
@@ -38,129 +40,81 @@ const Links = () => {
               Links
             </Heading>
             <Text fontSize="lg" py={4}>
-              Links to things about me including some of my work...
+              Here are a few links to some of the projects I've been involved.
             </Text>
-            <List spacing={4} styleType="disc">
+            <List spacing={16}>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.imdb.com/name/nm9000943/?ref_=fn_al_nm_1"
-                >
-                  IMDB
-                </ChakraLink>{" "}
-                - A link to my profile on IMDB that features a bit of my work in
-                film & television.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/JynxmIMLIJA"}
+                  title={
+                    "Real Sports with Bryant Gumbel: Giant of Africa ft. Masai Ujiri | HBO"
+                  }
+                  linkURL={"https://www.youtube.com/watch?v=JynxmIMLIJA"}
+                  description={`I travelled with HBO and Masai Ujiri as a sound mixer for
+                  this series that followed the NBA trophy as it travelled
+                  to Africa for the first time`}
+                  tags={["Location Sound Mixer"]}
+                />
               </ListItem>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=JynxmIMLIJA"
-                >
-                  Real Sports with Bryant Gumbel: Giant of Africa ft. Masai
-                  Ujiri (Full Segment) | HBO
-                </ChakraLink>{" "}
-                - I travelled with HBO and Masai Ujiri as a sound mixer for this
-                series that followed the NBA trophy as it travelled to Africa
-                for the first time.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/2-fxRKhgvvM"}
+                  title={"Disruptor Conductor"}
+                  linkURL={
+                    "https://www.cbc.ca/cbcdocspov/episodes/disruptor-conductor"
+                  }
+                  description={`I was the associate producer for this CBC documentary that
+                  followed Daniel Bartholomew-Poyser & Thorgy Thor as they
+                  worked to put on the first orchestral drag queen show in
+                  Canada.`}
+                  tags={["Associate Producer"]}
+                />
               </ListItem>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.cbc.ca/cbcdocspov/episodes/disruptor-conductor"
-                >
-                  Disruptor Conductor
-                </ChakraLink>{" "}
-                - I was the associate producer for this CBC documentary that
-                followed Daniel Bartholomew-Poyser & Thorgy Thor as they worked
-                to put on the first orchestral drag queen show in Canada.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/_b_rzSEWzH0"}
+                  title={"Player Zero"}
+                  linkURL={
+                    "https://www.youtube.com/watch?v=_b_rzSEWzH0&feature=youtu.be"
+                  }
+                  description={`This was a CBC documentary that followed NBA hopeful Richard
+                  Armadi through tryouts. I served as the production manager as
+                  well as post audio mixer.`}
+                  tags={["Production Manager"]}
+                />
               </ListItem>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=_b_rzSEWzH0&feature=youtu.be"
-                >
-                  Player Zero
-                </ChakraLink>{" "}
-                - This was a CBC documentary that followed NBA hopeful Richard
-                Armadi through tryouts. I served as the production manager as
-                well as post audio mixer.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/9h6oRT9EsoI"}
+                  title={`Choir! Choir! Choir! sings Portishead's "Sour Times"`}
+                  linkURL={"https://www.youtube.com/watch?v=9h6oRT9EsoI"}
+                  description={`A choir singing "Sour Times" by Portishead. I was one of the audio engineers that mixed the final track.`}
+                  tags={["Sound Mixer"]}
+                />
               </ListItem>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="http://www.shortroundup.com/"
-                >
-                  Short Round Up
-                </ChakraLink>{" "}
-                - I was the online editor for this short documentary. It
-                features Nobu Adilman as he searches for the Asian men who, as
-                boys, answered the open-call audition to be cast as Indiana
-                Jones’ sidekick.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/lZs9Q85bUN8"}
+                  title={`Royal Wood - Long Way Out`}
+                  linkURL={
+                    "https://www.youtube.com/watch?v=lZs9Q85bUN8&list=LL&index=11"
+                  }
+                  description={`This is a music video I worked on as the audio playback tech
+                  and projectionist.`}
+                  tags={["Playback", "Projectionist"]}
+                />
               </ListItem>
               <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=dJRsWJqDjFE"
-                >
-                  Rick Astley with Choir! Choir! Choir! - Never Gonna Give You
-                  Up!!!
-                </ChakraLink>{" "}
-                - I shot this live music video featuring Rick Astley and Choir!
-                Choir! Choir! performing Never Gonna Give You Up. It was a lot
-                of fun and has over 2.5 million views.
-              </ListItem>
-              <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=R8QXqxcHLko"
-                >
-                  Tattoo Artist Reacts to WWE Tattoos | Attitude Era
-                </ChakraLink>{" "}
-                - I was the location sound mixer for this segment featured on
-                Bloody Elbow. I learned a lot about wrestling 👊
-              </ListItem>
-              <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=jV4vuAwOGtA&list=LL&index=10"
-                >
-                  Purple Rain performed by Sabrina Wan - Regent Park School of
-                  Music
-                </ChakraLink>{" "}
-                - This was a live performance of Purple Rain that I mixed the
-                final audio for.
-              </ListItem>
-              <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=lZs9Q85bUN8&list=LL&index=11"
-                >
-                  Royal Wood - Long Way Out
-                </ChakraLink>{" "}
-                - This is a music video I worked on as the audio playback tech
-                and projectionist.
-              </ListItem>
-              <ListItem>
-                <ChakraLink
-                  isExternal
-                  color="teal.500"
-                  href="https://www.youtube.com/watch?v=1cc_neVdjb4&list=LL&index=9"
-                >
-                  MILCK - I Can’t Keep Quiet!
-                </ChakraLink>{" "}
-                - This was a live performance with MILCK and 1300 choir members.
-                I was a camera operator and coordinator for this video.
+                <VideoLinkCard
+                  videoURL={"https://www.youtube.com/embed/vy3zphEApJs"}
+                  title={`Kill Order`}
+                  linkURL={"https://www.imdb.com/title/tt3847642/"}
+                  description={`This is an indie sci-fi action movie where I served as a production manager. I also mixed the final audio for theatres. `}
+                  tags={["Production Manager", "Sound Mixer"]}
+                />
               </ListItem>
             </List>
+            <Subscribe />
           </Box>
         </Main>
         <Footer />

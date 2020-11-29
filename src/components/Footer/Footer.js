@@ -8,9 +8,6 @@ export const Footer = (props) => (
       <Divider borderColor="gray.200" />
       <SocialLinks />
       <Box pt={4} fontSize="sm" color="gray.400" textAlign="center">
-        <Link href="/gear" passHref>
-          <CharkaLink mr={2}>/gear</CharkaLink>
-        </Link>
         <Link href="/newsletter" passHref>
           <CharkaLink mr={2}>/newsletter</CharkaLink>
         </Link>

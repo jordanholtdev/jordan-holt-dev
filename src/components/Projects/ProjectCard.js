@@ -2,13 +2,13 @@ import {
   Link as ChakraLink,
   Button,
   Box,
-  Tag,
-  TagLabel,
   Flex,
   Image,
   useColorMode,
   Stack,
 } from "@chakra-ui/core";
+
+import { FaNodeJs, FaHtml5, FaReact } from "react-icons/fa";
 
 import { Container } from "../Container";
 
@@ -40,28 +40,52 @@ export const ProjectCard = ({
       bg={bgColor[colorMode]}
       color={color[colorMode]}
     >
-      <Box py={2} px={4}>
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        py={2}
+        px={4}
+        w={["100%", "50%"]}
+      >
         <Image
           src={imageUrl}
           alt={name}
           objectFit="cover"
-          rounded="18px"
-          size="150px"
+          rounded="8px"
+          size="205px"
           boxShadow={dropShadow[colorMode]}
         />
-      </Box>
-      <Stack spacing={2} alignItems={["center", "start"]}>
+      </Flex>
+      <Stack
+        ml={4}
+        spacing={2}
+        alignItems={["center", "start"]}
+        justifyContent="center"
+        w="100%"
+        h="100%"
+      >
         <Box fontSize="xl" textTransform="capitalize" fontWeight="bolder">
           {name}
         </Box>
-        <Box py={1} fontSize="md">
+        {/* <Stack isInline>
+          <Box as={FaNodeJs} size="28px" color="green.400" />
+          <Box as={FaHtml5} size="28px" color="orange.400" />
+          <Box as={FaReact} size="28px" color="blue.200" />
+        </Stack> */}
+        <Box
+          py={1}
+          fontSize="md"
+          maxWidth="500px"
+          textAlign={["center", "start"]}
+        >
           {description}
         </Box>
         <Box>
           <Container
             flexDirection="row"
             width="100%"
-            pt={2}
+            justifyContent="center"
+            pt={4}
             bg={bgColor[colorMode]}
             color={color[colorMode]}
           >
@@ -72,12 +96,17 @@ export const ProjectCard = ({
               mr={2}
               role="link"
             >
-              <Button width="100%" variantColor="green" variant="outline">
+              <Button
+                width="100%"
+                size="sm"
+                variantColor="blue"
+                variant="outline"
+              >
                 View Live
               </Button>
             </ChakraLink>
-            <ChakraLink isExternal href={gitLink} flexGrow={3} mx={2}>
-              <Button variantColor="green" variant="solid">
+            <ChakraLink isExternal href={gitLink}>
+              <Button size="sm" variantColor="blue" variant="solid">
                 GitHub
               </Button>
             </ChakraLink>

@@ -1,4 +1,5 @@
 import { DarkModeSwitch } from "../DarkModeSwitch";
+import { useRef } from "react";
 import {
   useDisclosure,
   Text,
@@ -23,7 +24,7 @@ import styled from "@emotion/styled";
 
 function MenuDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
 
   return (
     <>
@@ -33,7 +34,7 @@ function MenuDrawer() {
         aria-label="open menu"
         variantColor="gray"
         onClick={onOpen}
-        size="lg"
+        size="md"
       >
         Menu
       </Button>
@@ -155,7 +156,7 @@ export const Nav = () => {
             variant="ghost"
             as="a"
             variantColor="gray"
-            size="lg"
+            size="md"
           >
             Contact
           </Button>

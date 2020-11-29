@@ -31,18 +31,15 @@ export const ContactForm = () => {
       initialValues={{ name: "", email: "", message: "" }}
       validationSchema={validationSchema}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
-        const FORM_ID = process.env.FORMSPREE_FORM_ID;
+        const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
-        const res = await fetch(
-          "https://formspree.io/p/1531282609055727227/f/signupForm",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify(values),
-          }
-        );
+        const res = await fetch(`https://formspree.io/p/${FORM_ID}`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(values),
+        });
         const { error } = await res.json();
 
         if (error) {
@@ -125,7 +122,7 @@ export const ContactForm = () => {
                   placeholder="Enter your message here..."
                 />
                 <FormHelperText id="message-helper-text">
-                  A brief message regarding your inquirey
+                  A brief message regarding your inquiry.
                 </FormHelperText>
                 <FormErrorMessage>{form.errors.message}</FormErrorMessage>
               </FormControl>

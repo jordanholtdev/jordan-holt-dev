@@ -90,11 +90,10 @@ export const TechSection = () => {
           Technology
         </Heading>
         <Text fontSize="lg">
-          The past decade has seen my frontend development stack evolve from
-          utilising basic HTML, CSS and sprinkles of Javascript to leveraging
-          modern workflows. These are deep rooted with component based
-          frameworks that align with build tools and transpilers such as
-          Webpack, Rollup and Babel.
+          From utilising basic HTML, CSS and JavaScript to leveraging modern
+          workflows, my development stack evolves based on the project. From
+          component based frameworks that align with build tools and transpilers
+          such as Webpack, Rollup and Babel.
         </Text>
       </Flex>
     </SimpleGrid>

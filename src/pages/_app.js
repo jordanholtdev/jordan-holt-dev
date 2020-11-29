@@ -17,10 +17,7 @@ function MyApp({ Component, pageProps }) {
               content="width=device-width, initial-scale=1"
               name="viewport"
             />
-            <meta
-              http-equiv="Content-Type"
-              content="text/html; charset=utf-8"
-            />
+            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           </Head>
           <DefaultSeo {...SEO} />
           <Component {...pageProps} />

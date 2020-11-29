@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  useColorMode,
 } from "@chakra-ui/core";
 
 import {
@@ -30,6 +31,8 @@ const title = "About Me – Jordan Holt";
 const description = "A little bit about myself and the things that I do.";
 
 const About = () => {
+  const { colorMode } = useColorMode();
+  const linkColor = { light: "blue.700", dark: "green.200" };
   return (
     <>
       <NextSeo
@@ -53,7 +56,10 @@ const About = () => {
               I'm a developer, writer and digital creative. I write about
               development, technology and JavaScript in my{" "}
               <NextLink passHref href="/newsletter">
-                <ChakraLink color="green.200" aria-label="newsletter page">
+                <ChakraLink
+                  color={linkColor[colorMode]}
+                  aria-label="newsletter page"
+                >
                   newsletter.
                 </ChakraLink>
               </NextLink>
@@ -65,7 +71,7 @@ const About = () => {
             </Text>
             <Text fontSize="lg" py={4}>
               I enjoy spending my free time making music, exploring the outdoors
-              and spending time my loved ones.
+              and spending time my friends and family.
             </Text>
             <Heading as="h3" size="lg" my={4}>
               Platforms I use
@@ -78,11 +84,11 @@ const About = () => {
               <ListItem>
                 <ListIcon
                   icon={FaTwitterSquare}
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   size="28px"
                 />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -92,9 +98,13 @@ const About = () => {
                 interest me.
               </ListItem>
               <ListItem>
-                <ListIcon icon={FaGithub} color="green.200" size="28px" />
+                <ListIcon
+                  icon={FaGithub}
+                  color={linkColor[colorMode]}
+                  size="28px"
+                />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -102,7 +112,7 @@ const About = () => {
                 </ChakraLink>
                 This is where I host a lot of my code. Including the{" "}
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -110,7 +120,7 @@ const About = () => {
                 </ChakraLink>{" "}
                 and{" "}
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/jordanholtdev/jordan-holt-blog"
                 >
@@ -118,9 +128,13 @@ const About = () => {
                 </ChakraLink>
               </ListItem>
               <ListItem>
-                <ListIcon icon={CgIndieHackers} color="green.200" size="28px" />
+                <ListIcon
+                  icon={CgIndieHackers}
+                  color={linkColor[colorMode]}
+                  size="28px"
+                />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -130,9 +144,13 @@ const About = () => {
                 learn about indie software developement.
               </ListItem>
               <ListItem>
-                <ListIcon icon={FaDev} color="green.200" size="28px" />
+                <ListIcon
+                  icon={FaDev}
+                  color={linkColor[colorMode]}
+                  size="28px"
+                />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -143,9 +161,13 @@ const About = () => {
                 support for the dev community.
               </ListItem>
               <ListItem>
-                <ListIcon icon={FaLinkedin} color="green.200" size="28px" />
+                <ListIcon
+                  icon={FaLinkedin}
+                  color={linkColor[colorMode]}
+                  size="28px"
+                />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -158,11 +180,11 @@ const About = () => {
               <ListItem>
                 <ListIcon
                   icon={FaHackerNewsSquare}
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   size="28px"
                 />
                 <ChakraLink
-                  color="green.200"
+                  color={linkColor[colorMode]}
                   isExternal
                   href="https://github.com/vercel/next.js/blob/canary/examples/with-chakra-ui"
                 >
@@ -176,7 +198,10 @@ const About = () => {
               <Text as="i" fontSize="md">
                 If you're interested in learning more about me, check out{" "}
                 <NextLink href="/links" passHref>
-                  <ChakraLink color="green.200" aria-label="links page">
+                  <ChakraLink
+                    color={linkColor[colorMode]}
+                    aria-label="links page"
+                  >
                     these links
                   </ChakraLink>
                 </NextLink>{" "}
