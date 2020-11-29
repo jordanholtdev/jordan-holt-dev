@@ -1,12 +1,12 @@
 import {
   Link as ChakraLink,
-  AspectRatioBox,
+  AspectRatio,
   Box,
   Tag,
   Text,
   Stack,
   useColorMode,
-} from "@chakra-ui/core";
+} from '@chakra-ui/react';
 
 export const VideoLinkCard = ({
   videoURL,
@@ -17,27 +17,27 @@ export const VideoLinkCard = ({
 }) => {
   const { colorMode } = useColorMode();
 
-  const bgColor = { light: "white", dark: "gray.700" };
-  const linkColor = { light: "blue.700", dark: "green.200" };
+  const bgColor = { light: 'white', dark: 'gray.700' };
+  const linkColor = { light: 'blue.700', dark: 'green.200' };
   return (
-    <Box borderWidth="1px" bg={bgColor[colorMode]}>
-      <AspectRatioBox ratio={16 / 9}>
-        <Box as="iframe" title={title} src={videoURL} allowFullScreen />
-      </AspectRatioBox>
+    <Box borderWidth='1px' bg={bgColor[colorMode]}>
+      <AspectRatio ratio={16 / 9}>
+        <Box as='iframe' title={title} src={videoURL} allowFullScreen />
+      </AspectRatio>
       <Box p={4}>
         <ChakraLink
-          mt="1"
-          fontWeight="bold"
-          lineHeight="tight"
+          mt='1'
+          fontWeight='bold'
+          lineHeight='tight'
           isExternal
           color={linkColor[colorMode]}
           href={linkURL}
         >
           {title}
-        </ChakraLink>{" "}
+        </ChakraLink>{' '}
         <Stack spacing={4} isInline my={2}>
           {tags.map((name) => (
-            <Tag size="sm" key={name} variantColor="green" variant="outline">
+            <Tag b='sm' key={name} colorScheme='green' variant='outline'>
               {name}
             </Tag>
           ))}

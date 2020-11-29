@@ -1,34 +1,34 @@
-import { Box, Flex, Heading, Text, Stack, Image } from "@chakra-ui/core";
-import { SocialLinks } from "../SocialLinks/SocialLinks";
+import { Box, Flex, Heading, Text, Stack, Image } from '@chakra-ui/react';
+import { SocialLinks } from '../SocialLinks/SocialLinks';
 
 export const Hero = ({ title }) => (
   <Flex
-    justifyContent="center"
-    alignItems="center"
-    w="100%"
-    maxWidth="50rem"
+    justifyContent='center'
+    alignItems='center'
+    w='100%'
+    maxWidth='50rem'
     p={4}
   >
-    <Stack spacing={1} align="left" w="100%" pt={[8, 8, 12]}>
-      <Box display={["block", "flex"]}>
+    <Stack spacing={1} align='left' w='100%' pt={[8, 8, 12]}>
+      <Box display={['block', 'flex']}>
         <Box>
-          <Box flexShrink="0" pb={[6, 8]}>
+          <Box flexShrink='0' pb={[6, 8]}>
             <Image
-              rounded="full"
-              size="125px"
-              src="/static/images/about-page.jpg"
-              fallbackSrc="https://via.placeholder.com/150"
-              alt="Jordan Holt"
+              rounded='full'
+              boxSize='125px'
+              src='/static/images/about-page.jpg'
+              fallbackSrc='https://via.placeholder.com/150'
+              alt='Jordan Holt'
             />
           </Box>
-          <Heading as="h1" fontSize={["4xl", "6xl"]} pb={2}>
+          <Heading as='h1' fontSize={['4xl', '6xl']} pb={2}>
             {title}
           </Heading>
-          <Text maxWidth="800px" letterSpacing="wide" fontSize="lg">
+          <Text maxWidth='800px' letterSpacing='wide' fontSize='lg'>
             Thanks for visiting my site. I am a front-end web developer. I use
             JavaScript, React, HTML and CSS to build creative and user-friendly
             front-ends that deliver the best possible user experience across
-            different browsers and hybrid mobile applications.{" "}
+            different browsers.{' '}
           </Text>
         </Box>
       </Box>

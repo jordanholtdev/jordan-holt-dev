@@ -6,11 +6,11 @@ import {
   Image,
   useColorMode,
   Stack,
-} from "@chakra-ui/core";
+} from '@chakra-ui/react';
 
-import { FaNodeJs, FaHtml5, FaReact } from "react-icons/fa";
+import { FaNodeJs, FaHtml5, FaReact } from 'react-icons/fa';
 
-import { Container } from "../Container";
+import { Container } from '../Container';
 
 export const ProjectCard = ({
   imageUrl,
@@ -21,50 +21,50 @@ export const ProjectCard = ({
 }) => {
   const { colorMode } = useColorMode();
   const dropShadow = {
-    light: `-10px 10px 30px #dee1e3, 
+    light: `-10px 10px 30px #dee1e3,
     10px -10px 30px #ffffff;`,
-    dark: `-16px 16px 32px #14151e, 
+    dark: `-16px 16px 32px #14151e,
     16px -16px 32px #1a1d28`,
   };
-  const bgColor = { light: "white", dark: "gray.800" };
-  const color = { light: "black", dark: "white" };
+  const bgColor = { light: 'white', dark: 'gray.800' };
+  const color = { light: 'black', dark: 'white' };
   return (
     <Flex
       py={2}
-      alignItems="center"
-      direction={["column", "row"]}
-      justifyContent={["center", "start"]}
-      borderWidth="1px"
-      rounded="18px"
-      overflow="hidden"
+      alignItems='center'
+      direction={['column', 'row']}
+      justifyContent={['center', 'start']}
+      borderWidth='1px'
+      rounded='18px'
+      overflow='hidden'
       bg={bgColor[colorMode]}
       color={color[colorMode]}
     >
       <Flex
-        flexDirection="column"
-        alignItems="center"
+        flexDirection='column'
+        alignItems='center'
         py={2}
         px={4}
-        w={["100%", "50%"]}
+        w={['100%', '50%']}
       >
         <Image
           src={imageUrl}
           alt={name}
-          objectFit="cover"
-          rounded="8px"
-          size="205px"
+          objectFit='cover'
+          rounded='8px'
+          boxSize='205px'
           boxShadow={dropShadow[colorMode]}
         />
       </Flex>
       <Stack
         ml={4}
         spacing={2}
-        alignItems={["center", "start"]}
-        justifyContent="center"
-        w="100%"
-        h="100%"
+        alignItems={['center', 'start']}
+        justifyContent='center'
+        w='100%'
+        h='100%'
       >
-        <Box fontSize="xl" textTransform="capitalize" fontWeight="bolder">
+        <Box fontSize='xl' textTransform='capitalize' fontWeight='bolder'>
           {name}
         </Box>
         {/* <Stack isInline>
@@ -74,17 +74,17 @@ export const ProjectCard = ({
         </Stack> */}
         <Box
           py={1}
-          fontSize="md"
-          maxWidth="500px"
-          textAlign={["center", "start"]}
+          fontSize='md'
+          maxWidth='500px'
+          textAlign={['center', 'start']}
         >
           {description}
         </Box>
         <Box>
           <Container
-            flexDirection="row"
-            width="100%"
-            justifyContent="center"
+            flexDirection='row'
+            width='100%'
+            justifyContent='center'
             pt={4}
             bg={bgColor[colorMode]}
             color={color[colorMode]}
@@ -94,19 +94,19 @@ export const ProjectCard = ({
               href={liveLink}
               flexGrow={1}
               mr={2}
-              role="link"
+              role='link'
             >
               <Button
-                width="100%"
-                size="sm"
-                variantColor="blue"
-                variant="outline"
+                width='100%'
+                size='sm'
+                colorScheme='blue'
+                variant='outline'
               >
                 View Live
               </Button>
             </ChakraLink>
             <ChakraLink isExternal href={gitLink}>
-              <Button size="sm" variantColor="blue" variant="solid">
+              <Button size='sm' colorScheme='blue' variant='solid'>
                 GitHub
               </Button>
             </ChakraLink>

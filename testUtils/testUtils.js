@@ -1,13 +1,9 @@
-import { render } from "@testing-library/react";
-import { ThemeProvider, ColorModeProvider } from "@chakra-ui/core";
-import "@testing-library/jest-dom";
+import { render } from '@testing-library/react';
+import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
+import '@testing-library/jest-dom';
 
 const ChakraRenderer = ({ children }) => {
-  return (
-    <ThemeProvider>
-      <ColorModeProvider value="dark">{children}</ColorModeProvider>
-    </ThemeProvider>
-  );
+  return <ChakraProvider>{children}</ChakraProvider>;
 };
 
 const customRender = (ui, options) =>
@@ -16,5 +12,5 @@ const customRender = (ui, options) =>
     ...options,
   });
 
-export * from "@testing-library/react";
+export * from '@testing-library/react';
 export { customRender as render };

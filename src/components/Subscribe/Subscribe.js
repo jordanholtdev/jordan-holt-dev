@@ -1,5 +1,5 @@
-import { Field, Formik } from "formik";
-import * as Yup from "yup";
+import { Field, Formik } from 'formik';
+import * as Yup from 'yup';
 
 import {
   Box,
@@ -14,41 +14,41 @@ import {
   Icon,
   useColorMode,
   useToast,
-} from "@chakra-ui/core";
+} from '@chakra-ui/react';
 
 const validateEmailSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required"),
+  email: Yup.string().email('Invalid email').required('Required'),
 });
 
 export const Subscribe = () => {
   const { colorMode } = useColorMode();
-  const bgColor = { light: "white", dark: "gray.700" };
-  const borderColor = { light: "gray.400", dark: "blue.100" };
+  const bgColor = { light: 'white', dark: 'gray.700' };
+  const borderColor = { light: 'gray.400', dark: 'blue.100' };
   const toast = useToast();
 
   return (
     <Box
-      border="1px solid"
+      border='1px solid'
       borderColor={borderColor[colorMode]}
       bg={bgColor[colorMode]}
       borderRadius={4}
       padding={6}
       my={4}
-      w="100%"
+      w='100%'
     >
-      <Heading as="h4" fontSize="2xl">
+      <Heading as='h4' fontSize='2xl'>
         Join the newsletter
       </Heading>
       <Formik
-        initialValues={{ email: "" }}
+        initialValues={{ email: '' }}
         validationSchema={validateEmailSchema}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
-          const res = await fetch("api/subscribe", {
+          const res = await fetch('api/subscribe', {
             body: JSON.stringify(values),
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
-            method: "POST",
+            method: 'POST',
           });
 
           const { error } = await res.json();
@@ -56,9 +56,9 @@ export const Subscribe = () => {
           if (error) {
             setSubmitting(false);
             toast({
-              title: "An error occurred.",
+              title: 'An error occurred.',
               description: error,
-              status: "error",
+              status: 'error',
               duration: 4000,
               isClosable: true,
             });
@@ -66,9 +66,9 @@ export const Subscribe = () => {
           }
           resetForm();
           toast({
-            title: "Success!.",
-            description: "Thank you! 🎉 You are now subscribed",
-            status: "success",
+            title: 'Success!.',
+            description: 'Thank you! 🎉 You are now subscribed',
+            status: 'success',
             duration: 4000,
             isClosable: true,
           });
@@ -76,26 +76,26 @@ export const Subscribe = () => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
-            <Field name="email">
+            <Field name='email'>
               {({ field, form }) => (
                 <FormControl
                   isInvalid={form.errors.email && form.touched.email}
                 >
-                  <FormLabel py={2} htmlFor="email" id="email">
+                  <FormLabel py={2} htmlFor='email' id='email'>
                     Email
                   </FormLabel>
                   <InputGroup>
                     <InputLeftElement>
-                      <Icon name="email" color="gray.300" />
+                      <Icon name='email' color='gray.300' />
                     </InputLeftElement>
                     <Input
                       {...field}
-                      focusBorderColor="teal.200"
-                      type="email"
-                      variant="outline"
-                      id="email"
-                      aria-label="your email"
-                      placeholder="jane@acme.com"
+                      focusBorderColor='teal.200'
+                      type='email'
+                      variant='outline'
+                      id='email'
+                      aria-label='your email'
+                      placeholder='jane@acme.com'
                     />
                   </InputGroup>
                   <FormErrorMessage>{form.errors.email}</FormErrorMessage>
@@ -104,9 +104,9 @@ export const Subscribe = () => {
             </Field>
             <Button
               mt={4}
-              variantColor="green"
-              variant="solid"
-              type="submit"
+              colorScheme='green'
+              variant='solid'
+              type='submit'
               isLoading={formik.isSubmitting}
             >
               Subscribe

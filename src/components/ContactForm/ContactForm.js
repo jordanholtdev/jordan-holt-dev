@@ -1,5 +1,5 @@
-import { Field, Form, Formik } from "formik";
-import * as Yup from "yup";
+import { Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
 import {
   FormControl,
   FormLabel,
@@ -9,18 +9,18 @@ import {
   useToast,
   FormHelperText,
   FormErrorMessage,
-} from "@chakra-ui/core";
+} from '@chakra-ui/react';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
   message: Yup.string()
-    .min(15, "Too Short!")
-    .max(300, "Too Long!")
-    .required("Required"),
+    .min(15, 'Too Short!')
+    .max(300, 'Too Long!')
+    .required('Required'),
 });
 
 export const ContactForm = () => {
@@ -28,16 +28,16 @@ export const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: "", email: "", message: "" }}
+      initialValues={{ name: '', email: '', message: '' }}
       validationSchema={validationSchema}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
         const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
         const res = await fetch(`https://formspree.io/p/${FORM_ID}`, {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify(values),
         });
         const { error } = await res.json();
@@ -46,9 +46,9 @@ export const ContactForm = () => {
           setSubmitting(false);
           resetForm();
           toast({
-            title: "An error occurred.",
+            title: 'An error occurred.',
             description: error,
-            status: "error",
+            status: 'error',
             duration: 4000,
             isClosable: true,
           });
@@ -58,9 +58,9 @@ export const ContactForm = () => {
         setSubmitting(false);
         resetForm();
         toast({
-          title: "Success!",
-          description: "Thank you, message submitted",
-          status: "success",
+          title: 'Success!',
+          description: 'Thank you, message submitted',
+          status: 'success',
           duration: 4000,
           isClosable: true,
         });
@@ -68,71 +68,71 @@ export const ContactForm = () => {
     >
       {(formik) => (
         <form onSubmit={formik.handleSubmit}>
-          <Field name="name">
+          <Field name='name'>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
-                <FormLabel htmlFor="name" id="name">
+                <FormLabel htmlFor='name' id='name'>
                   Name:
                 </FormLabel>
                 <Input
                   {...field}
-                  aria-label="your name"
-                  id="name"
-                  type="text"
+                  aria-label='your name'
+                  id='name'
+                  type='text'
                   isRequired
-                  focusBorderColor="teal.200"
-                  placeholder="name"
+                  focusBorderColor='teal.200'
+                  placeholder='name'
                 />
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
-          <Field name="email">
+          <Field name='email'>
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.email && form.touched.email}>
-                <FormLabel htmlFor="email">Email:</FormLabel>
+                <FormLabel htmlFor='email'>Email:</FormLabel>
                 <Input
                   {...field}
-                  aria-label="your email"
-                  id="email"
+                  aria-label='your email'
+                  id='email'
                   isRequired
-                  type="email"
-                  focusBorderColor="teal.200"
-                  placeholder="email"
+                  type='email'
+                  focusBorderColor='teal.200'
+                  placeholder='email'
                 />
                 <FormErrorMessage>{form.errors.email}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
-          <Field name="message">
+          <Field name='message'>
             {({ field, form }) => (
               <FormControl
-                aria-label="your message"
+                aria-label='your message'
                 isInvalid={form.errors.message && form.touched.message}
               >
-                <FormLabel htmlFor="message" id="message">
+                <FormLabel htmlFor='message' id='message'>
                   Message:
                 </FormLabel>
                 <Textarea
                   {...field}
-                  id="message"
+                  id='message'
                   isRequired
-                  type="text"
-                  focusBorderColor="teal.200"
-                  placeholder="Enter your message here..."
+                  type='text'
+                  focusBorderColor='teal.200'
+                  placeholder='Enter your message here...'
                 />
-                <FormHelperText id="message-helper-text">
+                <FormHelperText id='message-helper-text'>
                   A brief message regarding your inquiry.
                 </FormHelperText>
                 <FormErrorMessage>{form.errors.message}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
-          <input type="text" name="_gotcha" style={{ display: "none" }} />
+          <input type='text' name='_gotcha' style={{ display: 'none' }} />
           <Button
             mt={4}
-            variantColor="teal"
-            type="submit"
+            colorScheme='teal'
+            type='submit'
             isLoading={formik.isSubmitting}
           >
             Submit
