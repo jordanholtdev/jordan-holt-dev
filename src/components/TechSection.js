@@ -74,9 +74,7 @@ export const TechSection = () => {
         </Heading>
         <Text fontSize='lg'>
           From utilising basic HTML, CSS and JavaScript to leveraging modern
-          workflows, my development stack evolves based on the project. From
-          component based frameworks that align with build tools and transpilers
-          such as Webpack, Rollup and Babel.
+          workflows, my development stack evolves based on the project.
         </Text>
       </Flex>
     </SimpleGrid>
