@@ -72,13 +72,6 @@ function MenuDrawer() {
                 </NextLink>
               </ListItem>
               <ListItem>
-                <NextLink href='/newsletter' passHref>
-                  <ChakraLink aria-label='newsletter page'>
-                    Newsletter
-                  </ChakraLink>
-                </NextLink>
-              </ListItem>
-              <ListItem>
                 <NextLink href='/about' passHref>
                   <ChakraLink aria-label='about page'>About</ChakraLink>
                 </NextLink>

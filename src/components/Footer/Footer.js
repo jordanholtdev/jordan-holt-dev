@@ -1,11 +1,5 @@
 import Link from 'next/link';
-import {
-  Link as CharkaLink,
-  Flex,
-  Box,
-  Stack,
-  Divider,
-} from '@chakra-ui/react';
+import { Flex, Box, Stack, Divider } from '@chakra-ui/react';
 import { SocialLinks } from '../SocialLinks/SocialLinks';
 
 export const Footer = (props) => (
@@ -13,13 +7,9 @@ export const Footer = (props) => (
     <Stack>
       <Divider borderColor='gray.200' />
       <SocialLinks />
-      <Box pt={4} fontSize='sm' color='gray.400' textAlign='center'>
-        <Link href='/newsletter' passHref>
-          <CharkaLink mr={2}>/newsletter</CharkaLink>
-        </Link>
-      </Box>
+      <Box pt={4} fontSize='sm' color='gray.400' textAlign='center'></Box>
       <Box fontSize='sm' color='gray.400' textAlign='center'>
-        jordan holt
+        Jordan Holt
       </Box>
     </Stack>
   </Flex>

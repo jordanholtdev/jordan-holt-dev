@@ -4,7 +4,6 @@ import { Footer } from '../components/Footer/Footer';
 import { Nav } from '../components/Nav/Nav';
 import { NextSeo } from 'next-seo';
 import { VideoLinkCard } from '../components/VideoLinkCard';
-import { Subscribe } from '../components/Subscribe/Subscribe';
 
 import {
   Link as ChakraLink,
@@ -114,7 +113,6 @@ const Links = () => {
                 />
               </ListItem>
             </List>
-            <Subscribe />
           </Box>
         </Main>
         <Footer />
