@@ -25,9 +25,7 @@ export const Hero = ({ title }) => (
             {title}
           </Heading>
           <Text maxWidth='800px' letterSpacing='wide' fontSize='lg'>
-            Thanks for visiting my site. I am a huge nerd. I love technology and
-            getting my hands into the CLI to try something new. I have a passion
-            for learning so I'm never bored.{' '}
+            Welcome to my little corner of the interweb.
           </Text>{' '}
           <Text
             paddingTop='2'
@@ -35,11 +33,10 @@ export const Hero = ({ title }) => (
             letterSpacing='wide'
             fontSize='lg'
           >
-            I have a broad range of knowledge and experience in both technical
-            and client facing roles. From web technologies like JavaScript,
-            React, HTML and CSS to networking and infrasture. I am currently
-            working with interactive & immersive technology in a supporting
-            role.
+            I possess a broad range of knowledge in many professional fields,
+            from creative arts, technology development to audio engineering.
+            I've helped create solutions for world-class clients around the
+            world.
           </Text>
         </Box>
       </Box>

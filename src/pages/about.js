@@ -55,19 +55,18 @@ const About = () => {
             <Text fontSize='lg' py={4}>
               I'm a developer, writer and digital creative. I write about
               development, technology and JavaScript in my{' '}
-              <NextLink passHref href='/newsletter'>
-                <ChakraLink
-                  color={linkColor[colorMode]}
-                  aria-label='newsletter page'
-                >
-                  newsletter.
-                </ChakraLink>
-              </NextLink>
+              <ChakraLink
+                color={linkColor[colorMode]}
+                isExternal
+                href='https://blog.jordanholt.dev/'
+              >
+                blog{' '}
+              </ChakraLink>{' '}
             </Text>
             <Text fontSize='lg' py={4}>
               I studied audio engineering in college, graduating with Honors and
               spent a decade in music production and broadcast video before I
-              transitioned into web development.
+              decided to transition again.
             </Text>
             <Text fontSize='lg' py={4}>
               I enjoy spending my free time making music, exploring the outdoors

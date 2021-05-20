@@ -56,7 +56,7 @@ export const TechSection = () => {
           <Image
             rounded='full'
             objectFit='cover'
-            src='/static/images/react-logo.png'
+            src='/static/images/cof_orange_hex.png'
             boxSize='100px'
             alt='Segun Adebayo'
           />
@@ -73,8 +73,10 @@ export const TechSection = () => {
           Technology
         </Heading>
         <Text fontSize='lg'>
-          From utilising basic HTML, CSS and JavaScript to leveraging modern
-          workflows, my development stack evolves based on the project.
+          I love technology and getting my hands into the CLI to try something
+          new. From web technologies like JavaScript and HTML to networking and
+          administration I am constantly learning and putting technology to
+          work.
         </Text>
       </Flex>
     </SimpleGrid>
