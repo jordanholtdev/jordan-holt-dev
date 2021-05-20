@@ -9,7 +9,7 @@ export const Projects = () => {
       </Heading>
       <SimpleGrid columns={[1]} spacing={10}>
         <ProjectCard
-          imageUrl={'/static/images/Blog-Capture.jpg'}
+          imageUrl={'/static/images/blog-capture.jpg'}
           name={'My Blog'}
           description={
             'My personal blog. I write about learning to code, technology and web development. All the code is open source and readers can edit the articles written in MDX and open a pull request. Built in React using Gatsby, Chakra-UI, Jest and React Testing Library   '
